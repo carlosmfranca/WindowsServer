@@ -1,0 +1,38 @@
+## INSTALAÇÃO FOD (Feature On Demand) NO WINDOWS SERVER CORE
+
+# Conectado à internet
+Add-WindowsCapability -Online -Name ServerCore.AppCompatibility~~~~0.0.1.0
+
+# Modo Offline
+--> Faça download da ISO e copie para o servidor em questão. Eu prefiro criar uma pasta Temp no C:\, depois que encerro o trabalho sempre deixo essa pasta limpa.
+
+--> Monte a ISO
+Mount-DiskImage -ImagePath C:\Temp\FOD.iso
+
+--> Inicie a instalação (Windows 2022)
+Add-WindowsCapability -Online -Name ServerCore.AppCompatibility~~~~0.0.1.0 -Source X:\LanguagesAndOptionalFeatures\ -LimitAccess
+
+---> No Windows anterior ao 2022
+Add-WindowsCapability -Online -Name ServerCore.AppCompatibility~~~~0.0.1.0 -Source X:\ -LimitAccess
+
+--> Finalizado a instalação com sucesso, reinicie o servidor.
+Restart-Computer
+
+
+Comando Básicos
+=============================================================
+ncpa.cpl 		#Conexão de rede
+inetcpl.cpl		#Propriedades da internet
+mmc.exe			#Microsoft Management Console
+eventvwr.msc		#Visualizador de eventos
+PerfMon.exe		#Monitor de desempenho
+ResMon.exe		#Monitor de recursos
+devmgmt.msc		#Gerenciador de dispositivos
+Explorer.exe		#Explorador de arquivos
+PowerShell.exe		#Windows Power Shell
+PowerShell_ISE.exe	#Windows Power Shell ISE
+Diskmgmt.msc		#Gerenciador de disco
+virtmgmt.msc		#Gerenciador Hyper-V
+CluAdmin.msc		#Gerenciador de cluster failover
+lusrmgr.msc		#Usuários e Grupos locais
+taskschd.msc		#Agendador de tarefas
