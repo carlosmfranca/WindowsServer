@@ -12,8 +12,12 @@ Mount-DiskImage -ImagePath C:\Temp\FOD.iso
 --> Inicie a instalação (Windows 2022)
 Add-WindowsCapability -Online -Name ServerCore.AppCompatibility~~~~0.0.1.0 -Source X:\LanguagesAndOptionalFeatures\ -LimitAccess
 
+-- Onde X:\ equivale a letra do drive recebida após montagem da ISO.
+
 ---> No Windows anterior ao 2022
-Add-WindowsCapability -Online -Name ServerCore.AppCompatibility~~~~0.0.1.0 -Source X:\ -LimitAccess
+Add-WindowsCapability -Online -Name ServerCore.AppCompatibility~~~~0.0.1.0 -Source X: -LimitAccess
+
+-- Onde X:\ equivale a letra do drive recebida após montagem da ISO.
 
 --> Finalizado a instalação com sucesso, reinicie o servidor.
 Restart-Computer
